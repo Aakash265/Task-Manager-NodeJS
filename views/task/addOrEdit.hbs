@@ -1,0 +1,22 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/task" method="POST" autocomplete="off">
+<input type="hidden" name="_id" value="{{task._id}}">
+    <div class="form-group">
+        <label>Task</label>
+        <input type="text" class="form-control" value="{{task.taskName}}" name="taskName" placeholder="What's in your mind?">
+        <div class="text-danger">
+            {{task.taskNameError}}
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Deadline</label>
+        <input type="date" class="form-control" value="{{task.deadline}}" name="deadline">
+    </div>
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa-sharp fa-solid fa-bookmark"></i>&nbsp;Submit</button>
+        <a href="/task/list" class="btn btn-secondary"><i class="fa-sharp fa-solid fa-eye"></i>&nbsp;View Tasks</a>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+<h2>Task List<a class="btn btn-secondary" style="float: right;" href="/task"><i class="fa-sharp fa-solid fa-plus"></i>&nbsp;Add New</a>
+</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Deadline</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each list}}
+    <tr>
+        <td>{{this.taskName}}</td>
+        <td>{{this.deadline}}</td>
+        <td>
+            <a href="/task/{{this._id}}"><i class="fa-sharp fa-solid fa-pen-to-square" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/task/delete/{{this._id}}" onclick="return confirm("Are you sure you want to delete this task?");"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
